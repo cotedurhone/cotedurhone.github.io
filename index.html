@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <!-- Author: Dan Phan -->
-<html>
-<header>
-<title>Dan's Site</title>
-<link href="css/index.css" type="text/css" rel="stylesheet">
-</header>
-<body>
-<h1>
-Welcome to Dan's Site
-</h1>
-<script type="text/javascript" src="js/index.js"></script>
-</body>
+<html ng-app="leaderboardApp">
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+		<script src="app.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body ng-controller="ActiveMinutesController">
+		<h1>Fitbit active minutes friends leaderboard</h1>
+		<h2>Rolling over the last 7 days</h2>
+		<ol>
+			<li ng-repeat="player in players">
+				<div class="figure"><img src="{{player.img}}"/></div>
+				<div class="name">{{$index + 1}}. {{player.name}}</div>
+				<div class="minutes">{{player.minutes}}</div>
+				<div class="ago">{{player.ago}}</div>
+				<br clear="left">
+			</li>
+			<li ng-if="players.length == 0">Loading... </li>
+		</ol>
+		<div ng-if="logedIn == true">
+			<a href="javascript:prompt('Share this URL with your Fitbit friends to see them here', window.location.href.replace(/#.*/, ''));">Invite your Fitbit friends</a> 
+			<a href="/auth/fitbit/logout">Logout</a>
+		</div>
+
+		<a ng-if="logedIn != true"href="/auth/fitbit">Login with Fitbit</a>
+	</body>
 </html>
