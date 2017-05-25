@@ -1,0 +1,48 @@
+.figure{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    overflow:hidden;
+    float: left;
+    margin: 0.5em;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 1em;
+}
+
+ol {
+  list-style-type: none;
+  margin: 1em 0;
+  padding: 0
+}
+
+li {
+  border-bottom: 1px solid #888;
+}
+
+.name {
+  font-weight: bold;
+  padding: 0.7em 0 0.2em 0;
+}
+
+.minutes {
+  color: #888;
+}
+
+h1 {
+  font-size: 1.4em;
+  margin-bottom: 0.3em;
+}
+
+h2 {
+ font-size: 1.3em;
+ color: #666;
+  margin-top: 0.3em;
+}
+
+.ago {
+  font-size: 0.9em;
+	color: #999;
+}
